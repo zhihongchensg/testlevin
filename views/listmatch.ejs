@@ -5,6 +5,19 @@
     <title> testing with filter</title>
   </head>
   <body>
-    <p>test result .... <%=hashed%> </p>
+    <p> list of names here: </p>
+    <%list.forEach(function(name){%>
+      <li> <%=name%> </li>
+    <%})%>
+
+<br><br>
+    Key in the name <input type="text" name="" id=userinput value="">
+    <input type="submit" id=usersubmit value="Submit">
+
+    <p>THE CLOSEST MATCH IS.... <%=hashed%> </p>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/script.js" charset="utf-8"></script>
   </body>
 </html>

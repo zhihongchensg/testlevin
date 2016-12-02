@@ -24,20 +24,23 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/listmatch', function(req, res, next) {
-  var inputname = "manny"
+  // var inputname = document.getElementById('userinput')
+  var inputname = "yaya"
+  console.log(req.body)
+  // console.log('hello back at routes' + req.query)
+
   var match = function(listname){
-    console.log(listname)
+    // console.log(listname)
+    console.log(inputname)
     var temp = Natural.LevenshteinDistance(listname,inputname)
     if (temp < 2)
       return listname
   }
   var final = list.filter(match)
-  res.render('listmatch', {hashed: final})
+  res.render('listmatch', {
+    hashed: final,
+    list: list
+  })
 });
-
-
-
-
-
 
 module.exports = router;
